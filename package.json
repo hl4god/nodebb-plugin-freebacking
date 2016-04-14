@@ -10,6 +10,9 @@
     "type": "git",
     "url": "https://github.com/hl4god/nodebb-plugin-freebacking"
   },
+  "nbbpm": {
+    "compatibility": "^1.0.0"
+  },
   "keywords": [],
   "author": "Holly<hl4god@gmail.com>",
   "license": "BSD-2-Clause"
