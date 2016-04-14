@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-freebacking",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NodeBB Plugin for FreeBacking",
   "main": "library.js",
   "scripts": {
