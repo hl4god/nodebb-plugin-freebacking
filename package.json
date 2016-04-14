@@ -1,0 +1,16 @@
+{
+  "name": "nodebb-plugin-freebacking",
+  "version": "0.0.1",
+  "description": "NodeBB Plugin for FreeBacking",
+  "main": "library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hl4god/nodebb-plugin-freebacking"
+  },
+  "keywords": [],
+  "author": "Holly<hl4god@gmail.com>",
+  "license": "BSD-2-Clause"
+}

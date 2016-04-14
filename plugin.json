@@ -1,0 +1,9 @@
+{
+  "id":"nodebb-plugin-freebacking",
+  "name":"NodeBB Login from FreeBacking ",
+  "url": "https://github.com/hl4god/nodebb-plugin-freebacking",
+  "library": "./library.js",
+  "hooks": [
+    { "hook": "action:rewards.award:*", "method": "award" }
+  ]
+}
