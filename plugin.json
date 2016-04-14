@@ -4,6 +4,6 @@
   "url": "https://github.com/hl4god/nodebb-plugin-freebacking",
   "library": "./library.js",
   "hooks": [
-    { "hook": "action:rewards.award:*", "method": "award" }
+    { "hook": "action:rewards.award:essentials/award-reputation", "method": "award" }
   ]
 }

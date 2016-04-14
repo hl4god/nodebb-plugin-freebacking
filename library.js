@@ -6,7 +6,7 @@ var User = module.parent.require('./user'),
     async = module.parent.require('async'),
     request = module.parent.require('request'),
     fs = require("fs"),
-    hole = nconf.get("hole")
+    hole = nconf.get("hole"),
     holeSite = hole.holeSite,
     creditUrl = hole.creditUrl,
     pfsFile = hole.pfsFile,
@@ -16,17 +16,23 @@ var User = module.parent.require('./user'),
 // 奖励威望值时 ，同时在平台上奖励积分
 //plugins.fireHook('action:rewards.award:' + reward.rid, {uid: uid, reward: rewardData[rewards.indexOf(reward)]});
 Plugin.award = function(params,callback){
-  //用户UID
+  //params 124: { uid: 2, reward: { reputation: '1' } }
   console.log("params 20:",params);
   console.log("callback 20:",callback);
  var uid = params.uid;
- var credit = params.reward;
-
- awardCredit({uid:uid,credit:credit},function(err){
-   if(callback){
-     callback(err);
+ var credit = parseInt(params.reward.reputation);
+ User.getUserFields(uid,['username'],function(err,user){
+   if(err && callback){
+     return callback(err);
    }
+   awardCredit({uid:user.username,credit:credit},function(err){
+     if(callback){
+       callback(err);
+     }
+   });
+
  });
+
 };
 
 function awardCredit(body,callback){
@@ -48,3 +54,5 @@ function awardCredit(body,callback){
   callback(null,body);
   });
 }
+
+module.exports = Plugin;
